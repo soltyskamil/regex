@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script>
+//Zadanie 1
+var re1 = /^[A-Za-z0-9]+$/;
+console.log("Ala123", re1.test("Ala123"));
+console.log("Ala!", re1.test("Ala!"));
+
+//Zadanie 2
+var re2 = /^(0|b)/;
+var re2i = /^(0|b)/i;
+console.log("0kot", re2.test("0kot"));
+console.log("bdom", re2.test("bdom"));
+console.log("Bdom", re2i.test("Bdom"));
+
+//Zadanie 3
+var re3 = /[a-z]+_[a-z]+/;
+console.log("ala_kota", re3.test("ala_kota"));
+console.log("ALA_kota", re3.test("ALA_kota"));
+
+//Zadanie 4
+var re4 = /\b\w*[sS]{2,}\b/;
+console.log("hiss", re4.test("hiss"));
+console.log("hisssss", re4.test("hisssss"));
+console.log("his", re4.test("his"));
+
+//Zadanie 5
+var re5 = /^(?!.*[Aa])(?=(?:.*[A-Za-z]){6,}).+$/;
+console.log("polski", re5.test("polski"));
+console.log("Regularne wyrażenia", re5.test("Regularne wyrażenia"));
+console.log("ALOHA", re5.test("ALOHA"));
+console.log("Python powinno pasować", re5.test("Python powinno pasować"));
+
+//Zadanie 6
+var re6 = /^(?:<([A-Za-z]+)>[\s\S]*?<\/\1>\s*)+$/;
+console.log("<span>przykładowy tekst</span>", re6.test("<span>przykładowy tekst</span>"));
+console.log("<p>Wyrażenia regularne</p> <p>Elegancko</p>", re6.test("<p>Wyrażenia regularne</p> <p>Elegancko</p>"));
+//Zadanie 7
+var re7 = /^[A-Za-z]+@([A-Za-z]+)\.com$/;
+var email = "uzytkownik@firma.com";
+var match7 = email.match(re7);
+console.log(email, match7 ? match7[1] : null);
+
+//Zadanie 8
+var re8 = /\b\d+\b/g;
+var str8 = "2 koty i 3 psy";
+var match8 = str8.match(re8);
+console.log(str8, match8);
+
+//Zadanie 9
+var re9 = /^-?\d+(,\d+)?$/;
+console.log("123,2341515132135", re9.test("123,2341515132135"));
+console.log("-10", re9.test("-10"));
+console.log("18-12", re9.test("18-12"));
+console.log("123,", re9.test("123,"));
+
+//Zadanie 10
+var re10 = /\b\d{2,4}[-\/.][A-Za-z0-9]+[-\/.]\d{1,2}\b/g;
+var str10 = "2019-03-11: 23.5, 19/03/12: 12.7, 2019.03.13: 11.1, 2019-marzec-14: 14.3";
+var match10 = str10.match(re10);
+console.log(str10, match10);
+
+//Zadanie 11
+var re11 = /^#(?:[0-9A-Fa-f]{3}|[0-9A-Fa-f]{6})$/;
+console.log("#ab4", re11.test("#ab4"));
+console.log("#AB4B72", re11.test("#AB4B72"));
+console.log("#ab43", re11.test("#ab43"));
+console.log("#aaaaaaaaa", re11.test("#aaaaaaaaa"));
+console.log("#ahl", re11.test("#ahl"));
+</script>
+</body>
+</html>
